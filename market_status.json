@@ -1,0 +1,15 @@
+{
+  "timestamp": "2025-11-26T04:38:12.421373+09:00",
+  "market_times": {
+    "morning_session_start": "09:00",
+    "morning_session_end": "11:30",
+    "afternoon_session_start": "12:30",
+    "afternoon_session_end": "15:30",
+    "timezone": "Asia/Tokyo"
+  },
+  "is_market_day": true,
+  "market_day_method": "pandas_market_calendars",
+  "is_trading_hour": false,
+  "market_status": "closed",
+  "warning": null
+}

@@ -1,3 +1,91 @@
+JPX Market Status Checker
+
+Overview
+
+This Python script determines the current market opening status (business day and trading hours) of the Japan Exchange Group (JPX) and outputs the result in a well-structured JSON format. It is designed as a simple utility to quickly check if the market is currently open or closed for trading.
+
+The script prioritizes the use of the pandas-market-calendars library for accurate business day determination, which correctly accounts for weekends and Japanese national holidays. If the external library is not available, it switches to a robust fallback mechanism that checks for weekdays only.
+
+Requirements
+
+Python 3.8 or higher
+
+Dependencies
+
+The following external libraries are required to enable full holiday-aware functionality:
+
+pip install pandas pandas-market-calendars
+
+
+Standard Libraries:
+
+json
+
+os
+
+datetime
+
+External Libraries:
+
+pandas
+
+pandas-market-calendars
+
+File Structure
+
+File Name
+
+Description
+
+businessday.py
+
+The main executable script containing all logic for status checks and JSON output.
+
+market_status.json
+
+The output file generated upon script execution, containing the latest market status details.
+
+Usage
+
+Install Dependencies:
+Use pip to install the necessary libraries:
+
+pip install pandas pandas-market-calendars
+
+
+Execute the Script:
+Run the Python file directly from your terminal:
+
+python businessday.py
+
+
+Output:
+
+The determined market status is immediately printed to standard output in JSON format.
+
+A file named market_status.json is generated or updated in the same directory as the script.
+
+Example JSON Output
+
+The output provides clear information about the timestamp, defined trading hours, and the calculated status:
+
+{
+  "timestamp": "2025-11-26T12:34:56.789000+09:00",
+  "market_times": {
+    "morning_session_start": "09:00",
+    "morning_session_end": "11:30",
+    "afternoon_session_start": "12:30",
+    "afternoon_session_end": "15:30",
+    "timezone": "Asia/Tokyo"
+  },
+  "is_market_day": true,
+  "market_day_method": "pandas_market_calendars",
+  "is_trading_hour": true,
+  "market_status": "open",
+  "warning": null
+}
+
+
 # jpx-market-status-checker
 A Python script to check the current Japan Exchange (JPX) market status, including business day and trading hours, outputting results in JSON format.
 # JPX Market Status Checker
